@@ -43,7 +43,7 @@
         android:id="@+id/buttonUpdateUser"
         android:layout_width="200dp"
         android:layout_height="60dp"
-        android:layout_margin="20.dp"
-        android:text="Update Users"
-        android:textSize="18sp" />
+        android:layout_margin="20dp"
+        android:text="Button" />
+
 </LinearLayout>
