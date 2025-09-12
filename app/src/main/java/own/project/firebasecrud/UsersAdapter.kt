@@ -1,6 +1,7 @@
 package own.project.firebasecrud
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -24,6 +25,15 @@ class UsersAdapter(
         holder.adapterDataBinding.textViewName.text = usersList[position].userName
         holder.adapterDataBinding.textViewAge.text = usersList[position].userAge.toString()
         holder.adapterDataBinding.textViewEmail.text = usersList[position].userEmail
+
+        holder.adapterDataBinding.newLayout.setOnClickListener {
+            val Intent = Intent(context,UpdateUserActivity::class.java)
+            Intent.putExtra("id",usersList[position].userId)
+            Intent.putExtra("name",usersList[position].userName)
+            Intent.putExtra("email",usersList[position].userEmail)
+            Intent.putExtra("age",usersList[position].userAge)
+            context.startActivity(Intent)
+        }
     }
 
     override fun getItemCount(): Int {
