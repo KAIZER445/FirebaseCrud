@@ -12,6 +12,7 @@ class LoginActivity : AppCompatActivity() {
     lateinit var loginBinding: ActivityLoginBinding
 
     val auth : FirebaseAuth = FirebaseAuth.getInstance()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         loginBinding = ActivityLoginBinding.inflate(layoutInflater)
@@ -46,5 +47,17 @@ class LoginActivity : AppCompatActivity() {
                     Toast.makeText(applicationContext,task.exception?.toString(),Toast.LENGTH_SHORT).show()
                 }
             }
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        val user = auth.currentUser
+
+        if (user != null){
+            val intent = Intent(this@LoginActivity, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 }

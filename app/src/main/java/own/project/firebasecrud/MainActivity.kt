@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -52,6 +53,18 @@ class MainActivity : AppCompatActivity() {
         }).attachToRecyclerView(mainBinding.recyclerView)
 
         retrieveDataFromDatabase()
+
+        mainBinding.logout.setOnClickListener {
+            logout()
+        }
+    }
+
+    fun logout() {
+        FirebaseAuth.getInstance().signOut()
+        val intent = Intent(this@MainActivity, LoginActivity::class.java)
+        startActivity(intent)
+        finish()
+        Toast.makeText(applicationContext, "logout success", Toast.LENGTH_SHORT).show()
     }
 
     fun retrieveDataFromDatabase() {
