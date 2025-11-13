@@ -21,7 +21,6 @@ class UsersAdapter(
 
     override fun onBindViewHolder(holder: UsersViewHolder, position: Int) {
 
-
         holder.adapterDataBinding.textViewName.text = usersList[position].userName
         holder.adapterDataBinding.textViewAge.text = usersList[position].userAge.toString()
         holder.adapterDataBinding.textViewEmail.text = usersList[position].userEmail

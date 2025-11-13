@@ -35,7 +35,9 @@
         android:layout_height="wrap_content"
         android:text="logout"
         app:cornerRadius="0dp"
-        tools:layout_editor_absoluteX="306dp"
-        tools:layout_editor_absoluteY="5dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -43,4 +43,12 @@
         android:textSize="18sp"
         android:layout_marginTop="20dp" />
 
+    <Button
+        android:id="@+id/buttonForgot"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:text="I forgot my password"
+        android:textSize="18sp"
+        android:layout_marginTop="20dp"/>
+
 </LinearLayout>
