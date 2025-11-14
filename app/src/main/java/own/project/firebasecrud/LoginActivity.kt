@@ -38,6 +38,13 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this@LoginActivity, ForgetActivity::class.java)
             startActivity(intent)
         }
+
+        loginBinding.SigninWithPhoneNumber.setOnClickListener {
+
+            val intent = Intent(this,PhoneActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     fun signInWithFirebase(userEmail : String, userPassword : String){
