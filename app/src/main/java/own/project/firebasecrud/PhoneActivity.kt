@@ -27,7 +27,6 @@ class PhoneActivity : AppCompatActivity() {
         PhoneBinding = ActivityPhoneBinding.inflate(layoutInflater)
         setContentView(PhoneBinding.root)
 
-        // Initialize Callbacks FIRST
         mCallbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
             override fun onVerificationCompleted(credential: PhoneAuthCredential) {}
 
@@ -40,7 +39,6 @@ class PhoneActivity : AppCompatActivity() {
             }
         }
 
-        // Only ONE click listener
         PhoneBinding.buttonSendSMScode.setOnClickListener {
             val raw = PhoneBinding.editTextPhoneNumber.text.toString()
             val userPhoneNumber = "+977$raw"
